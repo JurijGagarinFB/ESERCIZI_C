@@ -1,3 +1,8 @@
+/*
+09/01/2024
+Dato un numero N intero positivo, stampare la somma dei primi N numeri primi alternati (uno sì e uno no)
+*/
+
 #include <stdio.h>
 
 int main() {
