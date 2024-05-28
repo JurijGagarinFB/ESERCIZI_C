@@ -8,7 +8,7 @@ creare un nuovo array senza doppioni. Fare la media dei due array finali (con do
 #include <time.h>
 
 int main() {
-    srand(time(0));  // Inizializza il generatore di numeri casuali (srand indica da dove inizia il generatore di numeri casuali, con argomento )
+    srand(time(0));  // Inizializza il generatore di numeri casuali (srand indica da dove inizia il generatore di numeri casuali, con argomento time prende l'orologio. se srand non viene dichiarato, viene impostato di default a 1)
     int lunghezza;
     float mediaArrayNoDoppioni, mediaArray;
 
