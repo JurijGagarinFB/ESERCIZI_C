@@ -20,7 +20,7 @@ ragione per cui non è stato possibile svolgere il calcolo.
         printf("Inserisci una coppia di numeri reali: \n");
         scanf("%d", &n1);
         scanf("%d", &n2);
-        if (n1 < n2)
+        if (n1 > n2)
         {
             r = (double)n1 / (double)n2;
         }
