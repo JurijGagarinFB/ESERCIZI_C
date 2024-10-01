@@ -13,7 +13,7 @@ di terminare il programma.
 #include <stdio.h>
 #include <limits.h>
 
-int main(int argc, char *argv[])
+int main()
 {
 	int a, b, c, min = INT_MAX, max = 0;
 
