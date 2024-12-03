@@ -1,13 +1,12 @@
 /**
- * @brief Scrivi il codice sorgente di un programma in cui il processo padre
- * genera tre processi figli. I processi dovranno visualizzare rispettivamente:
+ * @brief Scrivi il codice sorgente di un programma in cui il processo padre genera tre processi figli. 
+ * I processi dovranno visualizzare rispettivamente:
  * "Io sono il padre A, il mio PID=..."
  * "Io sono il figlio B, il mio PID=..., il mio nome è Qui"
  * "Io sono il figlio C, il mio PID=..., il mio nome è Quo"
  * "Io sono il figlio D, il mio PID=..., il mio nome è Qua"
  * @param argc Numero di argomenti passati attraverso la riga di comando
- * @param argv Array di stringhe contenente gli argomenti passati attraverso la
- * riga di comando
+ * @param argv Array di stringhe contenente gli argomenti passati attraverso la riga di comando
  *
  * @returns la funzione restituisce 0
  */
