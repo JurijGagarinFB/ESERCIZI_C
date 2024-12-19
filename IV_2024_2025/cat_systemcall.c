@@ -13,17 +13,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 int main(int argc, char *argv[]) {
+  if (argc != 2){
+    printf("Inserisci una quantità valida di argomenti");
+    exit(2);
+  }
   int fd = open(argv[1], O_RDONLY);
   if (fd == -1) {
     printf("Errore apertura file\n");
     exit(0);
   } else {
-    char x;
+    char x[8];
     int n_letto;
     int n_scritto;
-    while (n_letto = read(fd, &x, sizeof(x)) > 0) {
-      n_scritto = write(1, &x, n_letto);
+    while (n_letto = read(fd, x, sizeof(x)) > 0) {
+      n_scritto = write(1, x, strlen(x));
     }
   }
   return 0;
