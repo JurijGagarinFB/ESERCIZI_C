@@ -39,14 +39,14 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2)
+    if (argc < 4) // Verifica che ci siano almeno 3 file + carattere + file di output
     {
-        printf("Numero di argomenti passati non valido");
+        printf("Numero argomenti sbagliato");
         exit(1);
     }
 
     char carattereDaCercare = argv[argc - 2][0]; // Penultimo argomento è il carattere da cercare
-    char *outputPath = argv[argc - 1];           // Ultimo argomento è il file di output
+    char *outputPath = argv[argc - 1];          // Ultimo argomento è il file di output
 
     int occorrenzeTotali = 0;
 
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     int outputFd = open(outputPath, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (outputFd == -1)
     {
-        perror("Errore apertura file di output");
+        printf("Errore apertura file di output");
         exit(1);
     }
 
@@ -64,14 +64,15 @@ int main(int argc, char *argv[])
         int fileFd = open(argv[i], O_RDONLY);
         if (fileFd == -1)
         {
-            printf("Errore apertura file");
+            printf("Errore apertura file di input");
+            continue; // Passa al prossimo file
         }
 
         char buffer[1024];
         int bytesLetti;
         int occorrenzeFile = 0;
 
-        // Leggi il file carattere per carattere
+        // Leggi il file in blocchi
         while ((bytesLetti = read(fileFd, buffer, sizeof(buffer))) > 0)
         {
             for (int j = 0; j < bytesLetti; j++)
@@ -85,18 +86,38 @@ int main(int argc, char *argv[])
 
         if (bytesLetti == -1)
         {
-            perror("Errore durante la lettura del file");
+            printf("Errore durante la lettura del file");
         }
 
-        // Aggiorna le occorrenze totali e stampa i risultati
+        close(fileFd);
+
+        // Scrivi il risultato nel file di output
+        char risultato[256];
+        snprintf(risultato, sizeof(risultato),
+                 "Il carattere '%c' compare %d volte nel file %s\n",
+                 carattereDaCercare, occorrenzeFile, argv[i]);
+
+        if (write(outputFd, risultato, strlen(risultato)) == -1)
+        {
+            perror("Errore durante la scrittura nel file di output");
+        }
+
         occorrenzeTotali += occorrenzeFile;
-        printf(outputFd, "Il carattere '%c' compare %d volte nel file %s\n", carattereDaCercare, occorrenzeFile, argv[i]);
     }
 
-    // Scrivi il risultato totale
-    printf(outputFd, "Il carattere '%c' compare %d volte nei files forniti.\n", carattereDaCercare, occorrenzeTotali);
+    // Scrivi il risultato totale nel file di output
+    char risultatoTotale[256];
+    snprintf(risultatoTotale, sizeof(risultatoTotale),
+             "Il carattere '%c' compare %d volte nei files forniti.\n",
+             carattereDaCercare, occorrenzeTotali);
 
-    printf("Il carattere '%c' compare %d volte nei files forniti.\n", carattereDaCercare, occorrenzeTotali);
+    if (write(outputFd, risultatoTotale, strlen(risultatoTotale)) == -1)
+    {
+        perror("Errore durante la scrittura del risultato totale nel file di output");
+    }
+
+    // Mostra il risultato totale sullo schermo
+    printf("%s", risultatoTotale);
 
     return 0;
 }
