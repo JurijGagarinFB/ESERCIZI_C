@@ -1,5 +1,5 @@
 /**
- * @brief Esempio utilizzo funzione "wait()"" con corretto uso dell'argomento "status"
+ * @brief Esempio utilizzo funzione "wait()"" con corretto uso dell'argomento "status" e macro WEXITSTATUS()
  *
  * @param argc numero di parametri passati da linea di comando
  * @param argv array di stringhe che contiene i parametri passati da linea di comando
