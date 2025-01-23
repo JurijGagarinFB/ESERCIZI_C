@@ -1,3 +1,29 @@
+/**
+ * @brief Scrivi il codice sorgente di un programma in 
+ * cui il processo padre P1 genera un vettore V[3] di 
+ * tre numeri interi casuali appartenenti all'intervallo [0;5] estremi compresi. 
+ * Successivamente, P1 genera due processi figli: P2 e P3.
+ * 
+ * P2 genera due figli, P4 e P5: 
+ * P4 calcola e visualizza il prodotto delle componenti del vettore V[]; 
+ * P5 calcola e visualizza la media delle componenti del vettore V[].
+ * 
+ * P3 visualizza le componenti del vettore V[], genera un figlio P6 che calcola la somma delle
+ * componenti di V[] e restituisce il risultato al padre P3 che la visualizza.
+ * 
+ * La prima cosa che ciascun processo deve fare, appena genera un processo figlio, 
+ * è dichiararsi nel modo seguente (esempio): "P1: mio PID=..., mio figlio P2 ha PID=..."
+ * La prima cosa che ciascun processo figlio deve fare appena è stato generato, 
+ * è dichiararsi nel modo seguente: "P2: mio PID=..., mio padre P1 ha PID=..."
+ * Ogni volta che un processo visualizza qualcosa sullo schermo deve dichiararsi nel modo seguente: 
+ * "P4: quello che P4 deve visualizzare" "P5: quello che P4 deve visualizzare"
+ *
+ * @param argc numero di parametri passati da linea di comando
+ * @param argv array di stringhe che contiene i parametri passati da linea di comando
+ *
+ * @return 0 il programma ritorna 0
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
