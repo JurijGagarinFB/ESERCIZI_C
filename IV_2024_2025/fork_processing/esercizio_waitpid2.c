@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
 {
     int v[5];
     int P2, P3, P4, P5;
-    int sum = 0, min, max;
-    float avg;
+    int somma = 0, min, max;
+    float media;
 
     P2 = fork();
     if (P2 < 0)
@@ -121,18 +121,18 @@ int main(int argc, char *argv[])
         { // P5
             printf("P5: mio PID= %d, mio padre P2 ha PID= %d\n", getpid(), getppid());
 
-            int sum = 0;
+            int somma = 0;
             for (int i = 0; i < 5; i++)
             {
-                sum += v[i];
+                somma += v[i];
             }
-            avg = (float)sum / 5;
-            exit((int)(avg));
+            media = (float)somma / 5;
+            exit((int)(media));
         }
 
         waitpid(P5, &status, 0);
-        avg = WEXITSTATUS(status);
-        printf("P2 mio PID= %d: Valore medio= %.1f\n", getpid(), avg);
+        media = WEXITSTATUS(status);
+        printf("P2 mio PID= %d: Valore medio= %.1f\n", getpid(), media);
 
         exit(0);
     }
