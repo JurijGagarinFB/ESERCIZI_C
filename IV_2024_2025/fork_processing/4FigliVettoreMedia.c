@@ -49,7 +49,7 @@
 #include <sys/wait.h>
 #include <time.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     int F1, F2, F3, F4;
     int n1, n2, n2_dim, n3_dim, dim;
     float media;

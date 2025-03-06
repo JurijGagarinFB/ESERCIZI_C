@@ -30,7 +30,7 @@
 #include <sys/wait.h>
 #include <time.h>
 
-int main()
+int main(int argc, char *argv[])
 {
     int V[3]; // Vettore di 3 numeri interi
     int status;

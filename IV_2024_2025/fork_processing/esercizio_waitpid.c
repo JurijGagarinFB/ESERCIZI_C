@@ -32,7 +32,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-int main()
+int main(int argc, char *argv[])
 {
     int status1, status2;
 
