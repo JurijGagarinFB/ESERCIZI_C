@@ -33,7 +33,7 @@
  * Ogni volta che un processo visualizza qualcosa sullo schermo deve dichiararsi nel modo seguente:
  * "P1 mio PID=...: quello che P1 deve visualizzare"
  * "Pn mio PID=...: quello che Pn deve visualizzare"
- * 
+ *
  * @param argc numero di parametri passati da linea di comando
  * @param argv array di stringhe che contiene i parametri passati da linea di comando
  *
