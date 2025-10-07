@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/Francesco_Bazaj/Documenti/ESERCIZI_C/IV_2024_2025",
-      "program": "/home/Francesco_Bazaj/Documenti/ESERCIZI_C/IV_2024_2025/build/Debug/outDebug",
+      "cwd": "/home/bazajfrancesco/Documenti/ESERCIZI_C/V_2025_2026",
+      "program": "/home/bazajfrancesco/Documenti/ESERCIZI_C/V_2025_2026/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
