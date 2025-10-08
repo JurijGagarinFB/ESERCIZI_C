@@ -1,0 +1,67 @@
+\hypertarget{es__6__systemcall_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/systemcall/es\+\_\+6\+\_\+systemcall.c File Reference}
+\label{es__6__systemcall_8c}\index{IV\_2024\_2025/systemcall/es\_6\_systemcall.c@{IV\_2024\_2025/systemcall/es\_6\_systemcall.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for es\+\_\+6\+\_\+systemcall.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{es__6__systemcall_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{es__6__systemcall_8c_a473ddae44e42b6ae27acf9284d8e485d}{swap\+Asc}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Scrivere un programma in linguaggio C che legge da argv una serie di stringhe, le ordina in senso crescente o decrescente in funzione del flag usato in argv\mbox{[}2\mbox{]}. Si utilizzi un algoritmo di ordinamento a scelta. Si scriva il risultato sia a video che su un file il cui nome risiede in argv\mbox{[}1\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{es__6__systemcall_8c_ae804102ec1867af18e63e7f8826a4d07}{swap\+Desc}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{es__6__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{es__6__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{es__6__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{es\_6\_systemcall.c@{es\_6\_systemcall.c}!main@{main}}
+\index{main@{main}!es\_6\_systemcall.c@{es\_6\_systemcall.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{es__6__systemcall_8c_a473ddae44e42b6ae27acf9284d8e485d}\label{es__6__systemcall_8c_a473ddae44e42b6ae27acf9284d8e485d}} 
+\index{es\_6\_systemcall.c@{es\_6\_systemcall.c}!swapAsc@{swapAsc}}
+\index{swapAsc@{swapAsc}!es\_6\_systemcall.c@{es\_6\_systemcall.c}}
+\doxysubsubsection{\texorpdfstring{swapAsc()}{swapAsc()}}
+{\footnotesize\ttfamily void swap\+Asc (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Scrivere un programma in linguaggio C che legge da argv una serie di stringhe, le ordina in senso crescente o decrescente in funzione del flag usato in argv\mbox{[}2\mbox{]}. Si utilizzi un algoritmo di ordinamento a scelta. Si scriva il risultato sia a video che su un file il cui nome risiede in argv\mbox{[}1\mbox{]}. 
+
+Esempio\+: \$ ./a.out file.\+txt --asc ciao a tutti a ciao tutti
+
+\$ cat file.\+txt a ciao tutti
+
+Esempio\+: \$ ./a.out file.\+txt --desc ciao a tutti tutti ciao a
+
+\$ cat file.\+txt tutti ciao a
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & numero di parametri passati da linea di comando \\
+\hline
+{\em argv} & array di stringhe che contiene i parametri passati da linea di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 il programma ritorna 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{es__6__systemcall_8c_ae804102ec1867af18e63e7f8826a4d07}\label{es__6__systemcall_8c_ae804102ec1867af18e63e7f8826a4d07}} 
+\index{es\_6\_systemcall.c@{es\_6\_systemcall.c}!swapDesc@{swapDesc}}
+\index{swapDesc@{swapDesc}!es\_6\_systemcall.c@{es\_6\_systemcall.c}}
+\doxysubsubsection{\texorpdfstring{swapDesc()}{swapDesc()}}
+{\footnotesize\ttfamily void swap\+Desc (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

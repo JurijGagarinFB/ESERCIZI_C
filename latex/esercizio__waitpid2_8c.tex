@@ -1,0 +1,45 @@
+\hypertarget{esercizio__waitpid2_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/fork\+\_\+processing/esercizio\+\_\+waitpid2.c File Reference}
+\label{esercizio__waitpid2_8c}\index{IV\_2024\_2025/fork\_processing/esercizio\_waitpid2.c@{IV\_2024\_2025/fork\_processing/esercizio\_waitpid2.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+Include dependency graph for esercizio\+\_\+waitpid2.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{esercizio__waitpid2_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{esercizio__waitpid2_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Scrivi il codice sorgente di un programma in cui il processo padre P1 genera un processo figlio P2 P2 genera un vettore v\mbox{[}\mbox{]} di 5 numeri interi, forniti in input dall’utente $>$$>$ N.\+B. Fare attenzione!!! visualizza il contenuto del vettore calcola la somma dei numeri del vettore che, però, verrà visualizzata dal padre P1 successivamente, genera il processo figlio P3 P3 calcola il valore minimo tra i numeri del vettore P2 attende la terminazione di P3 e visualizza il valore minimo successivamente, genera il processo figlio P4 P4 calcola il valore massimo tra i numeri del vettore P2 attende la terminazione di P4 e visualizza il valore massimo successivamente, genera il processo figlio P5 P5 calcola il valore medio tra i numeri del vettore P2 attende la terminazione di P5 e visualizza il valore medio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{esercizio__waitpid2_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{esercizio__waitpid2_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{esercizio\_waitpid2.c@{esercizio\_waitpid2.c}!main@{main}}
+\index{main@{main}!esercizio\_waitpid2.c@{esercizio\_waitpid2.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Scrivi il codice sorgente di un programma in cui il processo padre P1 genera un processo figlio P2 P2 genera un vettore v\mbox{[}\mbox{]} di 5 numeri interi, forniti in input dall’utente $>$$>$ N.\+B. Fare attenzione!!! visualizza il contenuto del vettore calcola la somma dei numeri del vettore che, però, verrà visualizzata dal padre P1 successivamente, genera il processo figlio P3 P3 calcola il valore minimo tra i numeri del vettore P2 attende la terminazione di P3 e visualizza il valore minimo successivamente, genera il processo figlio P4 P4 calcola il valore massimo tra i numeri del vettore P2 attende la terminazione di P4 e visualizza il valore massimo successivamente, genera il processo figlio P5 P5 calcola il valore medio tra i numeri del vettore P2 attende la terminazione di P5 e visualizza il valore medio. 
+
+\textbackslash{}\+La prima cosa che ciascun processo deve fare, appena genera un processo figlio, è dichiararsi nel modo seguente\+: \char`\"{}\+P1\+: mio PID=..., mio figlio P2 ha PID=...\char`\"{} La prima cosa che ciascun processo figlio deve fare appena è stato generato, è dichiararsi nel modo seguente\+: \char`\"{}\+P2\+: mio PID=..., mio padre P1 ha PID=...\char`\"{}
+
+Ogni volta che un processo visualizza qualcosa sullo schermo deve dichiararsi nel modo seguente\+: \char`\"{}\+P1 mio PID=...\+: quello che P1 deve visualizzare\char`\"{} \char`\"{}\+Pn mio PID=...\+: quello che Pn deve visualizzare\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & numero di parametri passati da linea di comando \\
+\hline
+{\em argv} & array di stringhe che contiene i parametri passati da linea di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 il programma ritorna 0 
+\end{DoxyReturn}

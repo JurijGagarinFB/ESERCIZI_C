@@ -1,0 +1,45 @@
+\hypertarget{espressione1_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/fork\+\_\+processing/espressione1.c File Reference}
+\label{espressione1_8c}\index{IV\_2024\_2025/fork\_processing/espressione1.c@{IV\_2024\_2025/fork\_processing/espressione1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+Include dependency graph for espressione1.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{espressione1_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{espressione1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Scrivi il codice sorgente di un prg in cui il processo padre P genera due processi figli\+: F1 e F2. F1 somma 1+2; F2 somma 3+4. Entrambi restituiscono al processo padre P il risultato ottenuto dall\textquotesingle{}operazione compiuta. Padre P somma tra loro i risultati che i due figli gli hanno restituito e visalizza il valore di tale somma. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{espressione1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{espressione1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{espressione1.c@{espressione1.c}!main@{main}}
+\index{main@{main}!espressione1.c@{espressione1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Scrivi il codice sorgente di un prg in cui il processo padre P genera due processi figli\+: F1 e F2. F1 somma 1+2; F2 somma 3+4. Entrambi restituiscono al processo padre P il risultato ottenuto dall\textquotesingle{}operazione compiuta. Padre P somma tra loro i risultati che i due figli gli hanno restituito e visalizza il valore di tale somma. 
+
+La prima cosa che ciascun processo deve fare, appena genera un processo figlio, è dichiararsi nel modo seguente\+: "{}P\+: mio PID=..., mio figlio F1 ha PID=... La prima cosa che ciascun processo figlio deve fare appena è stato generato, è dichiararsi nel modo seguente\+: \char`\"{}\+F1\+: mio PID=..., mio padre P ha PID=...\char`\"{}
+
+Ogni volta che un processo visualizza qualcosa sullo schermo deve dichiararsi nel modo seguente\+: \char`\"{}\+P\+: quello che P deve visualizzare\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & numero di parametri passati da linea di comando \\
+\hline
+{\em argv} & array di stringhe che contiene i parametri passati da linea di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 il programma ritorna 0 
+\end{DoxyReturn}

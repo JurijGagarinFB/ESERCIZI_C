@@ -1,0 +1,48 @@
+\hypertarget{es__3__fork_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/fork\+\_\+processing/es\+\_\+3\+\_\+fork.c File Reference}
+\label{es__3__fork_8c}\index{IV\_2024\_2025/fork\_processing/es\_3\_fork.c@{IV\_2024\_2025/fork\_processing/es\_3\_fork.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$sys/fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for es\+\_\+3\+\_\+fork.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{es__3__fork_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{es__3__fork_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Data una stringa letta da riga di comando si scriva un programma in linguaggio C che istanzi un processo figlio il quale converta la stringa da minuscolo a maiuscolo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{es__3__fork_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{es__3__fork_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{es\_3\_fork.c@{es\_3\_fork.c}!main@{main}}
+\index{main@{main}!es\_3\_fork.c@{es\_3\_fork.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Data una stringa letta da riga di comando si scriva un programma in linguaggio C che istanzi un processo figlio il quale converta la stringa da minuscolo a maiuscolo. 
+
+esempio di esecuzione\+: \$./a.out ciao la stringa in maiuscolo è CIAO
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Numero di argomenti passati attraverso la riga di comando \\
+\hline
+{\em argv} & Array di stringhe contenente gli argomenti passati attraverso la riga di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la funzione restituisce 0 
+\end{DoxyReturn}

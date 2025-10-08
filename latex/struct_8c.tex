@@ -1,0 +1,276 @@
+\hypertarget{struct_8c}{}\doxysection{V\+\_\+2025\+\_\+2026/struct.c File Reference}
+\label{struct_8c}\index{V\_2025\_2026/struct.c@{V\_2025\_2026/struct.c}}
+
+
+Programma di esempio per la gestione di una struct di automobili (\mbox{\hyperlink{structAuto}{Auto}}).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for struct.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{struct_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAuto}{Auto}}
+\begin{DoxyCompactList}\small\item\em Rappresenta i dati principali di un\textquotesingle{}automobile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_8c_ab283b04511e9cdb65ad9ffa8cc1018cf}{stampa\+Auto}} (\mbox{\hyperlink{structAuto}{Auto}} auto1)
+\begin{DoxyCompactList}\small\item\em Stampa su stdout tutti i campi di una singola \mbox{\hyperlink{structAuto}{Auto}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_8c_a991c15f88c5d77d839643cb93c9d6821}{cerca\+Auto\+Per\+Targa}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count, char targa\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Cerca un\textquotesingle{}auto nell\textquotesingle{}array data la sua targa. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_8c_ac952ea60d53cdf35ed88f582cd8b86c2}{inserisci\+Auto}} (char nuovo\+Modello\mbox{[}$\,$\mbox{]}, char nuova\+Marca\mbox{[}$\,$\mbox{]}, int nuova\+Cilindrata, float nuovo\+Prezzo, int nuovo\+Anno, char nuova\+Targa\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int $\ast$auto\+Count)
+\begin{DoxyCompactList}\small\item\em Inserisce una nuova \mbox{\hyperlink{structAuto}{Auto}} nell\textquotesingle{}array se possibile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_8c_ab38f551e16e6a556b4a7d8cd0a50f165}{visualizza\+Auto}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count)
+\begin{DoxyCompactList}\small\item\em Visualizza tutte le auto presenti nell\textquotesingle{}array su stdout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_8c_a4f95a4d32005786488f9c68122db5fd7}{prezzo\+Alto\+Basso}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count, int $\ast$indice\+Min, int $\ast$indice\+Max)
+\begin{DoxyCompactList}\small\item\em Trova gli indici delle auto con prezzo minimo e massimo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_8c_ad677374378465b823efda35402b970b6}{ordina\+Per\+Anno}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count)
+\begin{DoxyCompactList}\small\item\em Ordina l\textquotesingle{}array di \mbox{\hyperlink{structAuto}{Auto}} in ordine crescente per anno di immatricolazione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_8c_ad2d4b13dda9c6de4c22703b38fe78b44}{visualizza\+Auto\+Con\+Prezzo\+Minimo}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count, float prezzo\+Minimo)
+\begin{DoxyCompactList}\small\item\em Visualizza tutte le auto con prezzo maggiore o uguale a quello indicato. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_8c_a58bd0b5794019ea9cd47bfc6ad76da1c}{media\+Prezzi\+Auto}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count)
+\begin{DoxyCompactList}\small\item\em Calcola la media aritmetica dei prezzi delle auto nell\textquotesingle{}array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_8c_a4b2454d95d9a8f4fe0e860f1878c8af0}{visualizza\+Auto\+Con\+Anno\+Scelto}} (\mbox{\hyperlink{structAuto}{Auto}} auto\+Array\mbox{[}$\,$\mbox{]}, int auto\+Count, int anno\+Scelto)
+\begin{DoxyCompactList}\small\item\em Mostra tutte le auto la cui data di immatricolazione corrisponde all\textquotesingle{}anno fornito. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Punto d\textquotesingle{}ingresso del programma\+: gestisce un piccolo menu testuale per l\textquotesingle{}utente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Programma di esempio per la gestione di una struct di automobili (\mbox{\hyperlink{structAuto}{Auto}}). 
+
+Esempio didattico che mostra come definire una struttura per rappresentare un\textquotesingle{}autovettura e funzioni di utilità per inserire, ricercare, visualizzare, ordinare e calcolare statistiche sulle auto.
+
+Funzionalità implementate\+:
+\begin{DoxyItemize}
+\item Inserimento di una nuova auto (con controllo sulla targa duplicata e limite massimo di elementi)
+\item Visualizzazione di tutte le auto
+\item Ricerca di un\textquotesingle{}auto per targa
+\item Ricerca del prezzo minimo e massimo
+\item Ordinamento per anno di immatricolazione
+\item Visualizzazione delle auto con prezzo minimo scelto
+\item Calcolo della media dei prezzi
+\item Visualizzazione delle auto con un anno di immatricolazione specifico
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Jurij\+Gagarin\+FB 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+08-\/10-\/2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{struct_8c_a991c15f88c5d77d839643cb93c9d6821}\label{struct_8c_a991c15f88c5d77d839643cb93c9d6821}} 
+\index{struct.c@{struct.c}!cercaAutoPerTarga@{cercaAutoPerTarga}}
+\index{cercaAutoPerTarga@{cercaAutoPerTarga}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{cercaAutoPerTarga()}{cercaAutoPerTarga()}}
+{\footnotesize\ttfamily int cerca\+Auto\+Per\+Targa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count,  }\item[{char}]{targa\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Cerca un\textquotesingle{}auto nell\textquotesingle{}array data la sua targa. 
+
+Scorre l\textquotesingle{}array di \mbox{\hyperlink{structAuto}{Auto}} e confronta il campo targa con la stringa fornita.
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} in cui effettuare la ricerca. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+{\em targa} & Stringa contenente la targa da cercare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Indice dell\textquotesingle{}auto trovata nell\textquotesingle{}array, oppure -\/1 se non trovata. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_8c_ac952ea60d53cdf35ed88f582cd8b86c2}\label{struct_8c_ac952ea60d53cdf35ed88f582cd8b86c2}} 
+\index{struct.c@{struct.c}!inserisciAuto@{inserisciAuto}}
+\index{inserisciAuto@{inserisciAuto}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{inserisciAuto()}{inserisciAuto()}}
+{\footnotesize\ttfamily int inserisci\+Auto (\begin{DoxyParamCaption}\item[{char}]{nuovo\+Modello\mbox{[}$\,$\mbox{]},  }\item[{char}]{nuova\+Marca\mbox{[}$\,$\mbox{]},  }\item[{int}]{nuova\+Cilindrata,  }\item[{float}]{nuovo\+Prezzo,  }\item[{int}]{nuovo\+Anno,  }\item[{char}]{nuova\+Targa\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{auto\+Count }\end{DoxyParamCaption})}
+
+
+
+Inserisce una nuova \mbox{\hyperlink{structAuto}{Auto}} nell\textquotesingle{}array se possibile. 
+
+Controlla che non si superi il limite massimo (10) e che la targa non sia già presente. In caso di successo copia i dati nella prossima posizione libera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuovo\+Modello} & Nome/modello dell\textquotesingle{}auto da inserire. \\
+\hline
+{\em nuova\+Marca} & Marca dell\textquotesingle{}auto. \\
+\hline
+{\em nuova\+Cilindrata} & Cilindrata (int). \\
+\hline
+{\em nuovo\+Prezzo} & Prezzo (float). \\
+\hline
+{\em nuovo\+Anno} & Anno di immatricolazione (int). \\
+\hline
+{\em nuova\+Targa} & Targa (string) \\
+\hline
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} dove inserire il nuovo elemento. \\
+\hline
+{\em auto\+Count} & Puntatore al contatore di elementi nell\textquotesingle{}array; viene incrementato in caso di successo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se inserimento avvenuto con successo, -\/1 se array pieno, -\/2 se targa già esistente. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{struct_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{struct.c@{struct.c}!main@{main}}
+\index{main@{main}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Punto d\textquotesingle{}ingresso del programma\+: gestisce un piccolo menu testuale per l\textquotesingle{}utente. 
+
+Il menu permette di eseguire le operazioni implementate dalle funzioni sopra. Non prende argomenti da linea di comando.
+
+\begin{DoxyReturn}{Returns}
+0 in caso di terminazione corretta. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_8c_a58bd0b5794019ea9cd47bfc6ad76da1c}\label{struct_8c_a58bd0b5794019ea9cd47bfc6ad76da1c}} 
+\index{struct.c@{struct.c}!mediaPrezziAuto@{mediaPrezziAuto}}
+\index{mediaPrezziAuto@{mediaPrezziAuto}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{mediaPrezziAuto()}{mediaPrezziAuto()}}
+{\footnotesize\ttfamily float media\+Prezzi\+Auto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count }\end{DoxyParamCaption})}
+
+
+
+Calcola la media aritmetica dei prezzi delle auto nell\textquotesingle{}array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}}. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Media dei prezzi (float). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_8c_ad677374378465b823efda35402b970b6}\label{struct_8c_ad677374378465b823efda35402b970b6}} 
+\index{struct.c@{struct.c}!ordinaPerAnno@{ordinaPerAnno}}
+\index{ordinaPerAnno@{ordinaPerAnno}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{ordinaPerAnno()}{ordinaPerAnno()}}
+{\footnotesize\ttfamily void ordina\+Per\+Anno (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count }\end{DoxyParamCaption})}
+
+
+
+Ordina l\textquotesingle{}array di \mbox{\hyperlink{structAuto}{Auto}} in ordine crescente per anno di immatricolazione. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} da ordinare. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_8c_a4f95a4d32005786488f9c68122db5fd7}\label{struct_8c_a4f95a4d32005786488f9c68122db5fd7}} 
+\index{struct.c@{struct.c}!prezzoAltoBasso@{prezzoAltoBasso}}
+\index{prezzoAltoBasso@{prezzoAltoBasso}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{prezzoAltoBasso()}{prezzoAltoBasso()}}
+{\footnotesize\ttfamily void prezzo\+Alto\+Basso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count,  }\item[{int $\ast$}]{indice\+Min,  }\item[{int $\ast$}]{indice\+Max }\end{DoxyParamCaption})}
+
+
+
+Trova gli indici delle auto con prezzo minimo e massimo. 
+
+Assuma che auto\+Count $>$= 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} da analizzare. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+{\em indice\+Min} & Puntatore a intero dove verrà salvato l\textquotesingle{}indice del prezzo minimo. \\
+\hline
+{\em indice\+Max} & Puntatore a intero dove verrà salvato l\textquotesingle{}indice del prezzo massimo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_8c_ab283b04511e9cdb65ad9ffa8cc1018cf}\label{struct_8c_ab283b04511e9cdb65ad9ffa8cc1018cf}} 
+\index{struct.c@{struct.c}!stampaAuto@{stampaAuto}}
+\index{stampaAuto@{stampaAuto}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{stampaAuto()}{stampaAuto()}}
+{\footnotesize\ttfamily void stampa\+Auto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto1 }\end{DoxyParamCaption})}
+
+
+
+Stampa su stdout tutti i campi di una singola \mbox{\hyperlink{structAuto}{Auto}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto1} & Struttura \mbox{\hyperlink{structAuto}{Auto}} da stampare. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_8c_ab38f551e16e6a556b4a7d8cd0a50f165}\label{struct_8c_ab38f551e16e6a556b4a7d8cd0a50f165}} 
+\index{struct.c@{struct.c}!visualizzaAuto@{visualizzaAuto}}
+\index{visualizzaAuto@{visualizzaAuto}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{visualizzaAuto()}{visualizzaAuto()}}
+{\footnotesize\ttfamily void visualizza\+Auto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count }\end{DoxyParamCaption})}
+
+
+
+Visualizza tutte le auto presenti nell\textquotesingle{}array su stdout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} da visualizzare. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_8c_a4b2454d95d9a8f4fe0e860f1878c8af0}\label{struct_8c_a4b2454d95d9a8f4fe0e860f1878c8af0}} 
+\index{struct.c@{struct.c}!visualizzaAutoConAnnoScelto@{visualizzaAutoConAnnoScelto}}
+\index{visualizzaAutoConAnnoScelto@{visualizzaAutoConAnnoScelto}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{visualizzaAutoConAnnoScelto()}{visualizzaAutoConAnnoScelto()}}
+{\footnotesize\ttfamily void visualizza\+Auto\+Con\+Anno\+Scelto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count,  }\item[{int}]{anno\+Scelto }\end{DoxyParamCaption})}
+
+
+
+Mostra tutte le auto la cui data di immatricolazione corrisponde all\textquotesingle{}anno fornito. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} da filtrare. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+{\em anno\+Scelto} & Anno di immatricolazione da cercare. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_8c_ad2d4b13dda9c6de4c22703b38fe78b44}\label{struct_8c_ad2d4b13dda9c6de4c22703b38fe78b44}} 
+\index{struct.c@{struct.c}!visualizzaAutoConPrezzoMinimo@{visualizzaAutoConPrezzoMinimo}}
+\index{visualizzaAutoConPrezzoMinimo@{visualizzaAutoConPrezzoMinimo}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{visualizzaAutoConPrezzoMinimo()}{visualizzaAutoConPrezzoMinimo()}}
+{\footnotesize\ttfamily void visualizza\+Auto\+Con\+Prezzo\+Minimo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAuto}{Auto}}}]{auto\+Array\mbox{[}$\,$\mbox{]},  }\item[{int}]{auto\+Count,  }\item[{float}]{prezzo\+Minimo }\end{DoxyParamCaption})}
+
+
+
+Visualizza tutte le auto con prezzo maggiore o uguale a quello indicato. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Array} & Array di \mbox{\hyperlink{structAuto}{Auto}} da filtrare. \\
+\hline
+{\em auto\+Count} & Numero di elementi validi nell\textquotesingle{}array. \\
+\hline
+{\em prezzo\+Minimo} & Soglia di prezzo (inclusiva). \\
+\hline
+\end{DoxyParams}

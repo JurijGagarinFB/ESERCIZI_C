@@ -1,0 +1,42 @@
+\hypertarget{cat__systemcall_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/systemcall/cat\+\_\+systemcall/cat\+\_\+systemcall.c File Reference}
+\label{cat__systemcall_8c}\index{IV\_2024\_2025/systemcall/cat\_systemcall/cat\_systemcall.c@{IV\_2024\_2025/systemcall/cat\_systemcall/cat\_systemcall.c}}
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for cat\+\_\+systemcall.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cat__systemcall_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{cat__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Utilizzando le system call open, read, write, close leggere il file rfc1918.\+txt e stamparlo a video. Il programa deve essere cosi invocato\+: \$./a.out rfc1918.\+txt Consiglio\+: leggere un carratere per volta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cat__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{cat__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{cat\_systemcall.c@{cat\_systemcall.c}!main@{main}}
+\index{main@{main}!cat\_systemcall.c@{cat\_systemcall.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Utilizzando le system call open, read, write, close leggere il file rfc1918.\+txt e stamparlo a video. Il programa deve essere cosi invocato\+: \$./a.out rfc1918.\+txt Consiglio\+: leggere un carratere per volta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & numero di parametri passati da linea di comando \\
+\hline
+{\em argv} & array di stringhe che contiene i parametri passati da linea di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 il programma ritorna 0 
+\end{DoxyReturn}

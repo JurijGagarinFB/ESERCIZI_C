@@ -1,0 +1,52 @@
+\hypertarget{es__4__systemcall_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/systemcall/es\+\_\+4\+\_\+systemcall/es\+\_\+4\+\_\+systemcall.c File Reference}
+\label{es__4__systemcall_8c}\index{IV\_2024\_2025/systemcall/es\_4\_systemcall/es\_4\_systemcall.c@{IV\_2024\_2025/systemcall/es\_4\_systemcall/es\_4\_systemcall.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for es\+\_\+4\+\_\+systemcall.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{es__4__systemcall_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{es__4__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Si vuole realizzare in linguaggio C un software monoprocesso che implementi il seguente comando\+: \$ cat file1.\+txt file2.\+txt file3.\+txt $\vert$ grep “c” \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{es__4__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{es__4__systemcall_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{es\_4\_systemcall.c@{es\_4\_systemcall.c}!main@{main}}
+\index{main@{main}!es\_4\_systemcall.c@{es\_4\_systemcall.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Si vuole realizzare in linguaggio C un software monoprocesso che implementi il seguente comando\+: \$ cat file1.\+txt file2.\+txt file3.\+txt $\vert$ grep “c” 
+
+Dove file\mbox{[}N\mbox{]}.txt con N maggiore uguale a 1 sono una serie di files e il carattere \char`\"{}c\char`\"{} è a scopo esemplificativo e potrebbe essere qualsiasi carattere.
+
+Si utilizzino le system call al fine di leggere tutti i file di testo e, per ogni file, ricercare il carattere. Al termine dell’esecuzione il software dovrà mostrare a video il numero di occorrenze del carattere trovate nei files e dovrà contemporaneamente scrivere l’output su un file di testo il cui path sarà letto da argv.
+
+Esempio\+: \$ ./a.out file1.\+txt file2.\+txt file3.\+txt k occorrenze.\+txt \$ Il carattere k compare 10 volte nei files\+: file1.\+txt, file2.\+txt, file3.\+txt \$ cat occorrenze.\+txt \$ Il carattere k compare 10 volte nei files\+: file1.\+txt, file2.\+txt, file3.\+txt
+
+Osservazioni\+: essendo il software monoprocesso non è necessario usare le pipe prestare attenzione all’uso corretto di argv si ricorda che il software deve funzionare per un numero arbitrario di files. i percorsi dei files possono essere sia assoluti che relativi
+
+Suggerimento\+: Per facilitare la ricerca è possibile leggere un singolo carattere per volta usando la funzione read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & numero di parametri passati da linea di comando \\
+\hline
+{\em argv} & array di stringhe che contiene i parametri passati da linea di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 il programma ritorna 0 
+\end{DoxyReturn}

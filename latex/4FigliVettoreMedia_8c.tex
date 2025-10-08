@@ -1,0 +1,50 @@
+\hypertarget{4FigliVettoreMedia_8c}{}\doxysection{IV\+\_\+2024\+\_\+2025/fork\+\_\+processing/4\+Figli\+Vettore\+Media.c File Reference}
+\label{4FigliVettoreMedia_8c}\index{IV\_2024\_2025/fork\_processing/4FigliVettoreMedia.c@{IV\_2024\_2025/fork\_processing/4FigliVettoreMedia.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for 4Figli\+Vettore\+Media.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{4FigliVettoreMedia_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{4FigliVettoreMedia_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Scrivi il codice sorgente di un prg in cui\+: \+\_\+ il processo PADRE \+\_\+visualizza il proprio PID \+\_\+genera 4 figli\+: F1, F2, F3, F4 \+\_\+ genera 2 numeri interi random, n1, n2 compresi tra 1 e 20 necessariamente diversi tra loro \+\_\+visualizza n1 ed n2\+: a prescindere dal valore di n1 ed n2, F2 dovrà dormire per un numero di secondi pari a n1 e restituire al padre un numero n2\+\_\+dim intero compreso tra 2 e 6 estremi compresi; F3 dovrà dormire per un numero di secondi pari a n2 e restituire al padre un numero n3\+\_\+dim intero compreso tra 2 e 10 estremi inclusi; non si sa chi dormirà di meno o di più ossia non si sa chi tra F2 ed F3 terminerà per primo. \+\_\+ solo dopo avere generato entrambi (sia F2 e sia F3), attende la loro terminazione\+: il numero intero restituito da F2 rappresenterà la dimensione dim del vettore che F1 dovrà generare \+\_\+per ciascun figlio, il padre visualizza il proprio PID e il PID del proprio figlio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{4FigliVettoreMedia_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{4FigliVettoreMedia_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{4FigliVettoreMedia.c@{4FigliVettoreMedia.c}!main@{main}}
+\index{main@{main}!4FigliVettoreMedia.c@{4FigliVettoreMedia.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Scrivi il codice sorgente di un prg in cui\+: \+\_\+ il processo PADRE \+\_\+visualizza il proprio PID \+\_\+genera 4 figli\+: F1, F2, F3, F4 \+\_\+ genera 2 numeri interi random, n1, n2 compresi tra 1 e 20 necessariamente diversi tra loro \+\_\+visualizza n1 ed n2\+: a prescindere dal valore di n1 ed n2, F2 dovrà dormire per un numero di secondi pari a n1 e restituire al padre un numero n2\+\_\+dim intero compreso tra 2 e 6 estremi compresi; F3 dovrà dormire per un numero di secondi pari a n2 e restituire al padre un numero n3\+\_\+dim intero compreso tra 2 e 10 estremi inclusi; non si sa chi dormirà di meno o di più ossia non si sa chi tra F2 ed F3 terminerà per primo. \+\_\+ solo dopo avere generato entrambi (sia F2 e sia F3), attende la loro terminazione\+: il numero intero restituito da F2 rappresenterà la dimensione dim del vettore che F1 dovrà generare \+\_\+per ciascun figlio, il padre visualizza il proprio PID e il PID del proprio figlio. 
+
+CIASCUN FIGLIO deve\+: identificrsi dicendo se è F1 o F2 o F3 o F4 \+\_\+ visualizzare il proprio PID e il PID del proprio padre
+
+F1 deve\+: \+\_\+ generare il vettore v\mbox{[} \mbox{]} di numeri interi di dimensione dim fornito in ingresso dall\textquotesingle{}utente e compresi tra 1 e 10 estremi inclusi \+\_\+ calcolarne la somma (somma)
+
+F4 deve\+: \+\_\+ calcolare il valore medio (media) dei numeri fornito in ingresso dall\textquotesingle{}utente e memorizzati nel vettore e \+\_\+ restituirlo al padre
+
+Il PADRE deve\+: visualizzare il proprio PID e il valore restituitogli da F4 con un chiaro messaggio in cui precisa ciò che esso rappresenta\+: \char`\"{}\+Sono il padre, il mio PID = ... , il valore medio dei numeri con cui hai popolato il vettore vale ...\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & numero di parametri passati da linea di comando \\
+\hline
+{\em argv} & array di stringhe che contiene i parametri passati da linea di comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 il programma ritorna 0 
+\end{DoxyReturn}

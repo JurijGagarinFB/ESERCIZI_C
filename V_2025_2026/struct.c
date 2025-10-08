@@ -1,29 +1,55 @@
-/*
-Esercizio - Strutture
-Scrivere un programma in C che dopo aver dichiarato una struttura denominata Auto con i seguenti
-campi: ModelloAuto, marca, cilindrata, prezzo, anno_immatricolazione, targa; determini:
-1) Il prezzo + alto e quello + basso visualizzando anche il modello dell&#39;auto;
-2) Ordinare la lista delle auto in base all&#39;anno d&#39;immatricolazione;
-3) Visualizzare il nome delle auto a partire da un prezzo scelto dall&#39;utente.
-4) Ricerchi un Auto scelta dall’utente (utilizzare il campo targa): visualizzando tutti i campi;
-5) La media dei prezzi delle auto inserite;
-6) Visualizzare le Auto con anno di immatricolazione scelto dall’utente;
-*/
+/**
+ * @file struct.c
+ * @brief Programma di esempio per la gestione di una struct di automobili (Auto).
+ *
+ * Esempio didattico che mostra come definire una struttura per rappresentare
+ * un'autovettura e funzioni di utilità per inserire, ricercare, visualizzare,
+ * ordinare e calcolare statistiche sulle auto.
+ *
+ * Funzionalità implementate:
+ * - Inserimento di una nuova auto (con controllo sulla targa duplicata e limite massimo di elementi)
+ * - Visualizzazione di tutte le auto
+ * - Ricerca di un'auto per targa
+ * - Ricerca del prezzo minimo e massimo
+ * - Ordinamento per anno di immatricolazione
+ * - Visualizzazione delle auto con prezzo minimo scelto
+ * - Calcolo della media dei prezzi
+ * - Visualizzazione delle auto con un anno di immatricolazione specifico
+ *
+ * @author JurijGagarinFB
+ * @date 08-10-2025
+ */
 
 #include <stdio.h>
 #include <string.h>
 
-#define PANDA 500
+/**
+ * @brief Rappresenta i dati principali di un'automobile.
+ *
+ * Campi:
+ * - modelloAuto: nome/modello dell'auto
+ * - marca: casa costruttrice
+ * - cilindrata: cilindrata in cc
+ * - prezzo: prezzo in valuta (float)
+ * - anno_immatricolazione: anno di prima immatricolazione
+ * - targa: targa dell'auto
+ */
 
 typedef struct
 {
-    char modelloAuto[PANDA];
+    char modelloAuto[50];
     char marca[50];
     int cilindrata;
     float prezzo;
     int anno_immatricolazione;
-    char targa[7];
+    char targa[8];
 } Auto;
+
+
+/**
+ * @brief Stampa su stdout tutti i campi di una singola Auto.
+ * @param auto1 Struttura Auto da stampare.
+ */
 
 // Funzione di Stampa Auto
 void stampaAuto(Auto auto1)
@@ -35,6 +61,18 @@ void stampaAuto(Auto auto1)
     printf("Anno di Immatricolazione: %d\n", auto1.anno_immatricolazione);
     printf("Targa: %s\n\n", auto1.targa);
 }
+
+
+/**
+ * @brief Cerca un'auto nell'array data la sua targa.
+ *
+ * Scorre l'array di Auto e confronta il campo targa con la stringa fornita.
+ *
+ * @param autoArray Array di Auto in cui effettuare la ricerca.
+ * @param autoCount Numero di elementi validi nell'array.
+ * @param targa Stringa contenente la targa da cercare.
+ * @return Indice dell'auto trovata nell'array, oppure -1 se non trovata.
+ */
 
 // Ricerca Auto per Targa
 int cercaAutoPerTarga(Auto autoArray[], int autoCount, char targa[])
@@ -48,6 +86,24 @@ int cercaAutoPerTarga(Auto autoArray[], int autoCount, char targa[])
     }
     return -1; // Non trovata
 }
+
+
+/**
+ * @brief Inserisce una nuova Auto nell'array se possibile.
+ *
+ * Controlla che non si superi il limite massimo (10) e che la targa non sia
+ * già presente. In caso di successo copia i dati nella prossima posizione libera.
+ *
+ * @param nuovoModello Nome/modello dell'auto da inserire.
+ * @param nuovaMarca Marca dell'auto.
+ * @param nuovaCilindrata Cilindrata (int).
+ * @param nuovoPrezzo Prezzo (float).
+ * @param nuovoAnno Anno di immatricolazione (int).
+ * @param nuovaTarga Targa (string)
+ * @param autoArray Array di Auto dove inserire il nuovo elemento.
+ * @param autoCount Puntatore al contatore di elementi nell'array; viene incrementato in caso di successo.
+ * @return 0 se inserimento avvenuto con successo, -1 se array pieno, -2 se targa già esistente.
+ */
 
 // Inserimento Auto
 int inserisciAuto(char nuovoModello[], char nuovaMarca[], int nuovaCilindrata, float nuovoPrezzo, int nuovoAnno, char nuovaTarga[], Auto autoArray[], int *autoCount)
@@ -73,6 +129,13 @@ int inserisciAuto(char nuovoModello[], char nuovaMarca[], int nuovaCilindrata, f
     return 0; // Successo
 }
 
+
+/**
+ * @brief Visualizza tutte le auto presenti nell'array su stdout.
+ * @param autoArray Array di Auto da visualizzare.
+ * @param autoCount Numero di elementi validi nell'array.
+ */
+
 // Visualizzazione Auto
 void visualizzaAuto(Auto autoArray[], int autoCount)
 {
@@ -83,6 +146,18 @@ void visualizzaAuto(Auto autoArray[], int autoCount)
         printf("\n\n");
     }
 }
+
+
+/**
+ * @brief Trova gli indici delle auto con prezzo minimo e massimo.
+ *
+ * Assuma che autoCount >= 1.
+ *
+ * @param autoArray Array di Auto da analizzare.
+ * @param autoCount Numero di elementi validi nell'array.
+ * @param indiceMin Puntatore a intero dove verrà salvato l'indice del prezzo minimo.
+ * @param indiceMax Puntatore a intero dove verrà salvato l'indice del prezzo massimo.
+ */
 
 // Prezzo Piu' Alto e Basso
 void prezzoAltoBasso(Auto autoArray[], int autoCount, int *indiceMin, int *indiceMax)
@@ -107,6 +182,13 @@ void prezzoAltoBasso(Auto autoArray[], int autoCount, int *indiceMin, int *indic
     }
 }
 
+
+/**
+ * @brief Ordina l'array di Auto in ordine crescente per anno di immatricolazione.
+ * @param autoArray Array di Auto da ordinare.
+ * @param autoCount Numero di elementi validi nell'array.
+ */
+
 // Ordina per Anno di Immatricolazione
 void ordinaPerAnno(Auto autoArray[], int autoCount)
 {
@@ -124,6 +206,14 @@ void ordinaPerAnno(Auto autoArray[], int autoCount)
     }
 }
 
+
+/**
+ * @brief Visualizza tutte le auto con prezzo maggiore o uguale a quello indicato.
+ * @param autoArray Array di Auto da filtrare.
+ * @param autoCount Numero di elementi validi nell'array.
+ * @param prezzoMinimo Soglia di prezzo (inclusiva).
+ */
+
 // Visualizza Auto con Prezzo Massimo Scelto
 void visualizzaAutoConPrezzoMinimo(Auto autoArray[], int autoCount, float prezzoMinimo)
 {
@@ -137,6 +227,14 @@ void visualizzaAutoConPrezzoMinimo(Auto autoArray[], int autoCount, float prezzo
     }
 }
 
+
+/**
+ * @brief Calcola la media aritmetica dei prezzi delle auto nell'array.
+ * @param autoArray Array di Auto.
+ * @param autoCount Numero di elementi validi nell'array.
+ * @return Media dei prezzi (float).
+ */
+
 // Media Prezzi Auto
 float mediaPrezziAuto(Auto autoArray[], int autoCount)
 {
@@ -147,6 +245,14 @@ float mediaPrezziAuto(Auto autoArray[], int autoCount)
     }
     return somma / autoCount;
 }
+
+
+/**
+ * @brief Mostra tutte le auto la cui data di immatricolazione corrisponde all'anno fornito.
+ * @param autoArray Array di Auto da filtrare.
+ * @param autoCount Numero di elementi validi nell'array.
+ * @param annoScelto Anno di immatricolazione da cercare.
+ */
 
 // Visualizza Auto con Anno di Immatricolazione Scelto
 void visualizzaAutoConAnnoScelto(Auto autoArray[], int autoCount, int annoScelto)
@@ -160,6 +266,16 @@ void visualizzaAutoConAnnoScelto(Auto autoArray[], int autoCount, int annoScelto
         }
     }
 }
+
+
+/**
+ * @brief Punto d'ingresso del programma: gestisce un piccolo menu testuale per l'utente.
+ *
+ * Il menu permette di eseguire le operazioni implementate dalle funzioni sopra.
+ * Non prende argomenti da linea di comando.
+ *
+ * @return 0 in caso di terminazione corretta.
+ */
 
 int main()
 {
