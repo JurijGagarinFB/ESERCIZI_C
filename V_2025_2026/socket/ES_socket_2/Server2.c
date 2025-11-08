@@ -22,46 +22,42 @@ numero di occorrenze del carattere nella stringa.
 #define DIM 50
 #define SERVERPORT 1450
 
-int trovaOccorrenze(char str[], char charDaCercare){
+int trovaOccorrenze(char str[], char c) {
     int count = 0;
-    for(int i = 0; i < strlen(str); i++){
-        if(str[i] == charDaCercare){
+    for (int i = 0; i < strlen(str); i++)
+        if (str[i] == c)
             count++;
-        }
-    }
     return count;
 }
 
-int main(){
-    struct sockaddr_in servizio, addr_remoto; // record con i dati del server e del client
-
+int main() {
+    struct sockaddr_in servizio, addr_remoto;
     servizio.sin_family = AF_INET;
     servizio.sin_addr.s_addr = htonl(INADDR_ANY);
     servizio.sin_port = htons(SERVERPORT);
-    int socketfd, soa, fromlen = sizeof(servizio);
-    char str[DIM], charDaCercare, response[DIM];
 
+    int socketfd, soa, fromlen = sizeof(servizio);
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
     bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
     listen(socketfd, 10);
 
-    for(;;)
-    {
-        printf("\n\nServer in ascolto...");
-        fflush(stdout);
-
+    
+    while (1) {
+        printf("Server in ascolto...\n");
         soa = accept(socketfd, (struct sockaddr *)&addr_remoto, &fromlen);
+
+        char str[DIM], c;
         read(soa, str, sizeof(str));
-        printf("Stringa ricevuta: %s\n", str);
-        
-        read(soa, &charDaCercare, sizeof(charDaCercare));
-        printf("Carattere da cercare ricevuto: %c\n", charDaCercare);
+        read(soa, &c, sizeof(c));
 
-        sprintf(response, "Il carattere '%c' appare %d volte nella stringa.", charDaCercare, trovaOccorrenze(str, charDaCercare));
+        printf("Ricevuto: \"%s\" e carattere '%c'\n", str, c);
 
-        printf("Invio risposta al client... %s\n", response);
-        write(soa, response, sizeof(response));
+        int occ = trovaOccorrenze(str, c);
+        write(soa, &occ, sizeof(occ));
+
         close(soa);
     }
+
+    close(socketfd);
     return 0;
 }

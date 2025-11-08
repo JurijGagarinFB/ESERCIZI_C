@@ -15,39 +15,36 @@ numero di occorrenze del carattere nella stringa.
 #include <errno.h>      //gestioni errori connessione
 #include <ctype.h>      //bind
 #include <unistd.h>     // file header che consente l'accesso alle API dello standard POSIX
+
 #define DIM 50
 #define SERVERPORT 1450
 
-int main(int argc, char **argv)
-{ // creazione di un elemento di tipo sockaddr vedi pagina 162
+int main() {
     struct sockaddr_in servizio;
-
     servizio.sin_family = AF_INET;
-    servizio.sin_addr.s_addr = htonl(INADDR_ANY); //  La funzione htonl accetta un numero a 32 bit in ordine di byte host e restituisce un numero a 32 bit nell'ordine dei byte di rete usato nelle reti TCP/IP (la famiglia di indirizzi AF_INET o AF_INET6).
-    servizio.sin_port = htons(SERVERPORT);        // La funzione htons accetta un numero a 16 bit nell'ordine dei byte host e restituisce un numero a 16 bit nell'ordine dei byte di rete usato nelle reti TCP/IP (la famiglia di indirizzi AF_INET o AF_INET6).
+    servizio.sin_addr.s_addr = htonl(INADDR_ANY);
+    servizio.sin_port = htons(SERVERPORT);
 
-    char str1[DIM], charDaCercare; // Stringa da inviare
-    int socketfd;   // identificatore della socket
+    char str1[DIM], charDaCercare;
+    int socketfd;
 
-    // creazione e definizione del Socket di tipo stream tcp pg 163
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
-
-    // connessione al server pag.173
     connect(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
-    printf("Inserisci la stringa\n");
+
+    printf("Inserisci la stringa: ");
     scanf("%s", str1);
 
-    fflush(stdin);
+    //flush(stdin); //non riesce a pulire il buffer, uso spazio prima di %c nello scanf successivo
 
-    printf("Inserisci il carattere da cercare\n");
-    scanf("%c", &charDaCercare);
+    printf("Inserisci il carattere da cercare: ");
+    scanf(" %c", &charDaCercare); //spazio precedente %c per consumare il newline (\n) rimasto nel buffer dallo scanf precedente
 
     write(socketfd, str1, sizeof(str1));
     write(socketfd, &charDaCercare, sizeof(charDaCercare));
 
-    read(socketfd, str1, sizeof(str1));
-
-    printf("\nRisposta dal server: %s\n", str1);
+    int occorrenze;
+    read(socketfd, &occorrenze, sizeof(int));
+    printf("Numero di occorrenze: %d\n", occorrenze);
 
     close(socketfd);
     return 0;
