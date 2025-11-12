@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['albero_2ec_68',['albero.c',['../albero_8c.html',1,'']]]
+  ['albero_2ec_85',['albero.c',['../albero_8c.html',1,'']]]
 ];

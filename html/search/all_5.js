@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inserisciauto_32',['inserisciAuto',['../struct_8c.html#ac952ea60d53cdf35ed88f582cd8b86c2',1,'struct.c']]]
+  ['getc_5fputc_5fputchar_2ec_37',['getc_putc_putchar.c',['../getc__putc__putchar_8c.html',1,'']]]
 ];

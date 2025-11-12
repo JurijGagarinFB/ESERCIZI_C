@@ -1,26 +1,4 @@
 var searchData=
 [
-  ['es123_2ec_8',['es123.c',['../es123_8c.html',1,'']]],
-  ['es_5f1_2ec_9',['es_1.c',['../systemcall_2exec_2es__1_2es__1_8c.html',1,'(Global Namespace)'],['../programmazione-di-sistema_2es__1_2es__1_8c.html',1,'(Global Namespace)']]],
-  ['es_5f10_2ec_10',['Es_10.c',['../Es__10_8c.html',1,'']]],
-  ['es_5f2_2ec_11',['es_2.c',['../systemcall_2exec_2es__2_2es__2_8c.html',1,'(Global Namespace)'],['../programmazione-di-sistema_2es__2_2es__2_8c.html',1,'(Global Namespace)']]],
-  ['es_5f2_5fsystemcall_2ec_12',['es_2_systemcall.c',['../es__2__systemcall_8c.html',1,'']]],
-  ['es_5f3_2ec_13',['es_3.c',['../es__3_8c.html',1,'']]],
-  ['es_5f3_5ffork_2ec_14',['es_3_fork.c',['../es__3__fork_8c.html',1,'']]],
-  ['es_5f3_5fsystemcall_2ec_15',['es_3_systemcall.c',['../es__3__systemcall_8c.html',1,'']]],
-  ['es_5f4_2ec_16',['es_4.c',['../es__4_8c.html',1,'']]],
-  ['es_5f4_5ffork_2ec_17',['es_4_fork.c',['../es__4__fork_8c.html',1,'']]],
-  ['es_5f4_5fsystemcall_2ec_18',['es_4_systemcall.c',['../es__4__systemcall_8c.html',1,'']]],
-  ['es_5f5_2ec_19',['es_5.c',['../es__5_8c.html',1,'']]],
-  ['es_5f6_2ec_20',['es_6.c',['../es__6_8c.html',1,'']]],
-  ['es_5f6_5fsystemcall_2ec_21',['es_6_systemcall.c',['../es__6__systemcall_8c.html',1,'']]],
-  ['es_5f8_2ec_22',['Es_8.c',['../Es__8_8c.html',1,'']]],
-  ['es_5f9_2ec_23',['Es_9.c',['../Es__9_8c.html',1,'']]],
-  ['es_5frecupero79_2ec_24',['es_recupero79.c',['../es__recupero79_8c.html',1,'']]],
-  ['esercizio_5f2_2ec_25',['esercizio_2.c',['../esercizio__2_8c.html',1,'']]],
-  ['esercizio_5f3_2ec_26',['esercizio_3.c',['../esercizio__3_8c.html',1,'']]],
-  ['esercizio_5f4_2ec_27',['esercizio_4.c',['../esercizio__4_8c.html',1,'']]],
-  ['esercizio_5fwaitpid_2ec_28',['esercizio_waitpid.c',['../esercizio__waitpid_8c.html',1,'']]],
-  ['esercizio_5fwaitpid2_2ec_29',['esercizio_waitpid2.c',['../esercizio__waitpid2_8c.html',1,'']]],
-  ['espressione1_2ec_30',['espressione1.c',['../espressione1_8c.html',1,'']]]
+  ['dim_13',['DIM',['../ES__socket__1_2Client1_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Client1.c'],['../ES__socket__1_2Server1_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Server1.c'],['../Client2_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Client2.c'],['../Server2_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Server2.c'],['../Client3_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Client3.c'],['../Server3_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Server3.c'],['../Client4_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Client4.c'],['../Server4_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Server4.c'],['../Client0_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Client0.c'],['../Server0_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Server0.c'],['../socket__prova__1_2Client1_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Client1.c'],['../socket__prova__1_2Server1_8c.html#ac25189db92959bff3c6c2adf4c34b50a',1,'DIM():&#160;Server1.c']]]
 ];

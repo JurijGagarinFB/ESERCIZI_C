@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lungh_33',['lungh',['../test_8c.html#aa4a260eeeb7f4b83d7de5abf0d951b24',1,'test.c']]]
+  ['inserisciauto_38',['inserisciAuto',['../struct_8c.html#ac952ea60d53cdf35ed88f582cd8b86c2',1,'struct.c']]]
 ];

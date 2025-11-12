@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['visualizzaauto_61',['visualizzaAuto',['../struct_8c.html#ab38f551e16e6a556b4a7d8cd0a50f165',1,'struct.c']]],
-  ['visualizzaautoconannoscelto_62',['visualizzaAutoConAnnoScelto',['../struct_8c.html#a4b2454d95d9a8f4fe0e860f1878c8af0',1,'struct.c']]],
-  ['visualizzaautoconprezzominimo_63',['visualizzaAutoConPrezzoMinimo',['../struct_8c.html#ad2d4b13dda9c6de4c22703b38fe78b44',1,'struct.c']]]
+  ['targa_75',['targa',['../structAuto.html#adf848666896ecd2cfd2784b5e64c5479',1,'Auto']]],
+  ['test_2ec_76',['test.c',['../test_8c.html',1,'']]],
+  ['trovaoccorrenze_77',['trovaOccorrenze',['../Server2_8c.html#a816cce062cc601b598456d9ce2849d00',1,'Server2.c']]]
 ];

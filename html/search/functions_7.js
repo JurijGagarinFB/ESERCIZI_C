@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['visualizzaauto_120',['visualizzaAuto',['../struct_8c.html#ab38f551e16e6a556b4a7d8cd0a50f165',1,'struct.c']]],
-  ['visualizzaautoconannoscelto_121',['visualizzaAutoConAnnoScelto',['../struct_8c.html#a4b2454d95d9a8f4fe0e860f1878c8af0',1,'struct.c']]],
-  ['visualizzaautoconprezzominimo_122',['visualizzaAutoConPrezzoMinimo',['../struct_8c.html#ad2d4b13dda9c6de4c22703b38fe78b44',1,'struct.c']]]
+  ['stampaauto_147',['stampaAuto',['../struct_8c.html#ab283b04511e9cdb65ad9ffa8cc1018cf',1,'struct.c']]],
+  ['swap_148',['swap',['../es__3__systemcall_8c.html#a24b46d953603392c7232c699e99ade69',1,'es_3_systemcall.c']]],
+  ['swapasc_149',['swapAsc',['../es__6__systemcall_8c.html#a473ddae44e42b6ae27acf9284d8e485d',1,'es_6_systemcall.c']]],
+  ['swapdesc_150',['swapDesc',['../es__6__systemcall_8c.html#ae804102ec1867af18e63e7f8826a4d07',1,'es_6_systemcall.c']]]
 ];
