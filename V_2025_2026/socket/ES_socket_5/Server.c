@@ -22,9 +22,17 @@ messaggio di quale delle due stringhe è + lunga o più corta o se sono uguali.
 #define DIM 50
 #define SERVERPORT 12345
 
-int lungo_corto(char* str,  char* str2, int* risultato){
+void lungo_corto(char* str,  char* str2, char* risultato){
+    int len1 = strlen(str);
+    int len2 = strlen(str2);
 
-    return risultato;
+    if(len1 > len2){
+        sprintf(risultato, "La prima stringa e' piu' lunga");
+    } else if(len1 < len2){
+        sprintf(risultato, "La seconda stringa e' piu' lunga");
+    } else {
+        sprintf(risultato, "Le due stringhe sono uguali");
+    }
 }
 
 int main(){
@@ -34,7 +42,7 @@ int main(){
     servizio.sin_addr.s_addr = htonl(INADDR_ANY);
     servizio.sin_port = htons(SERVERPORT);
     int socketfd, soa, fromlen = sizeof(servizio);
-    char str[DIM], pari[DIM], dispari[DIM];
+    char str[DIM], str2[DIM], risultato[DIM];
 
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
     bind(socketfd, (struct sockaddr *)&servizio, sizeof(servizio));
@@ -48,15 +56,13 @@ int main(){
         soa = accept(socketfd, (struct sockaddr *)&addr_remoto, &fromlen);
         read(soa, str, sizeof(str));
         printf("Stringa ricevuta: %s\n", str);
+        read(soa, str2, sizeof(str2));
+        printf("Stringa ricevuta: %s\n", str2);
 
+        lungo_corto(str, str2, risultato);
 
-        lettere_pari_dispari(str, pari, dispari);
-
-        printf("Invio risposta al client... %s\n", pari);
-        write(soa, pari, sizeof(pari));
-
-        printf("Invio risposta al client... %s\n", dispari);
-        write(soa, dispari, sizeof(dispari));
+        printf("Invio risposta al client... %s\n", risultato);
+        write(soa, risultato, sizeof(risultato));
 
         close(soa);
     }

@@ -38,14 +38,14 @@ int main(int argc, char **argv)
     printf("Inserisci la stringa\n");
     scanf("%s", str1);
     printf("Inserisci la seconda stringa\n");
-    scanf("%s", str2);
+    scanf(" %s", str2);
 
     write(socketfd, str1, sizeof(str1));
     write(socketfd, str2, sizeof(str2));
 
     read(socketfd, str1, sizeof(str1));
 
-    printf("\nRisposta dal server: %s, %s\n", str1);
+    printf("\nRisposta dal server: %s\n", str1);
 
     close(socketfd);
     return 0;
