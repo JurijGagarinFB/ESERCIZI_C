@@ -1,0 +1,6 @@
+Scrivere il codice in C di un’applicazione socket CLIENT–SERVER in cui il server riceve in input una stringa e,
+dopo aver effettuato i controlli opportuni, rispedisce al client quattro valori interi:
+- il numero di lettere,
+- il numero di cifre,
+- il numero di spazi,
+- il numero di caratteri speciali presenti nella stringa.

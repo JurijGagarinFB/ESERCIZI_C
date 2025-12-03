@@ -1,0 +1,3 @@
+Scrivere il codice in C di un’applicazione socket CLIENT–SERVER in cui il server riceve in input una stringa e,
+dopo eventuali controlli, rispedisce al client due stringhe:
+la versione completamente in maiuscolo e la versione completamente in minuscolo della stringa ricevuta.

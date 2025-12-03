@@ -1,0 +1,6 @@
+Scrivere il codice in C di un’applicazione socket CLIENT–SERVER in cui il client invia una stringa e un codice di operazione (0, 1, 2, 3).
+Il server, in base al codice ricevuto, restituisce:
+- la stringa invertita
+- il numero di vocali contenute
+- la stringa contenente solo caratteri alfabetici
+- la stringa originale con tutte le vocali rimosse
